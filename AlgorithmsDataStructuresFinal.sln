@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vending_machine", "vending_machine\vending_machine.csproj", "{053F5279-DDE6-47D2-8C0D-69BBECCAB911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repeatletter", "repeatletter\repeatletter.csproj", "{BEA0F0B0-6FC2-452C-A998-2299B06CB230}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{053F5279-DDE6-47D2-8C0D-69BBECCAB911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053F5279-DDE6-47D2-8C0D-69BBECCAB911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053F5279-DDE6-47D2-8C0D-69BBECCAB911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053F5279-DDE6-47D2-8C0D-69BBECCAB911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA0F0B0-6FC2-452C-A998-2299B06CB230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA0F0B0-6FC2-452C-A998-2299B06CB230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA0F0B0-6FC2-452C-A998-2299B06CB230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA0F0B0-6FC2-452C-A998-2299B06CB230}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {660C4C1A-B6C2-46D3-9792-7B5AD9C59769}
+	EndGlobalSection
+EndGlobal
