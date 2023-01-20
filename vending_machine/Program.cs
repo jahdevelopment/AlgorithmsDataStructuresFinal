@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+
 Console.WriteLine("=================== VENDING MACHINE =====================");
 
 //======= CREATING THE TOOLS =======
@@ -13,15 +15,16 @@ string itemInput;
 
 //======= FILLING THE VENDING MACHINE =======
 
-moneyAvailable.Add(1, 15);
-
-moneyAvailable.Add(2, 15);
-
-moneyAvailable.Add(5, 15);
+moneyAvailable.Add(20, 15);
 
 moneyAvailable.Add(10, 15);
 
-moneyAvailable.Add(20, 15);
+moneyAvailable.Add(5, 15);
+
+moneyAvailable.Add(2, 15);
+
+moneyAvailable.Add(1, 15);
+
 
 Items.Add("A", 1.0);
 
@@ -37,7 +40,7 @@ Items.Add("F", 3.0);
 
 Items.Add("G", 5.5);
 
-Items.Add("H", 4.5);
+Items.Add("H", 10.0);
 
 Items.Add("I", 4.0);
 
@@ -61,13 +64,69 @@ Console.WriteLine("Enter the name of the product you want to buy, or CANCEL to s
 
 itemInput = Console.ReadLine().ToUpper();
 
-if (itemInput == "CANCEL")
+
+if (Items.ContainsKey(itemInput))
 {
-    Console.WriteLine($"Operation cancelled, you can take your ${amountInput}.\nHave a great day!");
+    if (itemInput == "CANCEL")
+    {
+        Console.WriteLine($"Operation cancelled, you can take your ${amountInput}.\nHave a great day!");
+    }
+    
+    foreach(KeyValuePair <string, double> kvp in Items)
+    {
+        if (kvp.Key == itemInput)
+        {
+            if (kvp.Value < amountInput)
+            {
+                int returninMoney = amountInput - (int)kvp.Value;
+
+                int fillingReturning;
+
+                int updatingReturning;
+
+                
+                
+                foreach(KeyValuePair<int, int> m in moneyAvailable)
+                {
+                    if (m.Key == returninMoney)
+                    {
+                        //Items.Add(m.Value[fillingReturning]);
+
+                        Console.WriteLine($"Vending product {kvp.Key}, for ${kvp.Value}, returning ${m.Key}, thanks for your purchase!");
+                    }
+                    else if (m.Key < returninMoney)
+                    {
+
+
+
+                        Console.WriteLine($"Vending product {kvp.Key}, for ${kvp.Value}, returning ${m.Key}, thanks for your purchase!");
+
+                    }
+
+
+                 
+               
+                }
+
+
+                
+            }
+            else if(kvp.Value == amountInput)
+            {
+                Console.WriteLine($"Vending product {kvp.Key}, for {kvp.Value}, no returning money, thanks for your purchase!");
+            }
+            else if(kvp.Value > amountInput)
+            {
+                Console.WriteLine("Not enough money, please enter $XX more");
+                int moreMoneyInput = Int32.Parse(Console.ReadLine());
+                amountInput += moreMoneyInput;
+            }
+        }
+    }
 
 
 }
-else if (!Items.ContainsKey(itemInput))
+else
 {
     Console.WriteLine("Invalid input try again!");
 
@@ -76,8 +135,4 @@ else if (!Items.ContainsKey(itemInput))
     itemInput = Console.ReadLine().ToUpper();
 }
 
-foreach (KeyValuePair<string, double> pair in Items)
-{
-
-}
 
