@@ -78,14 +78,13 @@ if (Items.ContainsKey(itemInput))
         {
             if (kvp.Value < amountInput)
             {
-                int returninMoney = amountInput - (int)kvp.Value;
-
                 int fillingReturning;
 
                 int updatingReturning;
 
-                
-                
+                int returninMoney = amountInput - (int)kvp.Value;
+
+                                
                 foreach(KeyValuePair<int, int> m in moneyAvailable)
                 {
                     if (m.Key == returninMoney)
@@ -117,8 +116,12 @@ if (Items.ContainsKey(itemInput))
             }
             else if(kvp.Value > amountInput)
             {
+                //int lastToComplete = kvp.Value - amountInput;
+
                 Console.WriteLine("Not enough money, please enter $XX more");
+
                 int moreMoneyInput = Int32.Parse(Console.ReadLine());
+
                 amountInput += moreMoneyInput;
             }
         }
